@@ -1,9 +1,12 @@
 package dev.paulovieira.springuninter.models;
 
 import dev.paulovieira.springuninter.models.enums.Sexo;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+
 
 /**
  * Classe que representa um cliente.
@@ -11,18 +14,38 @@ import java.time.LocalDate;
  * @since 1.0
  * @version 1.0
  */
+@Entity
+@Table(name = "clientes")
 public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false, length = 50)
     private String nome;
+
+    @Column(nullable = false, length = 11, unique = true)
     private String cpf;
+
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE, pattern = "dd/MM/yyyy")
+    @Column(name = "data_nascimento", nullable = false, columnDefinition = "DATE")
     private LocalDate dataNascimento;
+
+    @Enumerated(EnumType.STRING)
     private Sexo sexo;
+
+    @Column(length = 12, unique = true)
     private String telefone;
+
+    @Column(length = 11, unique = true)
     private String celular;
+
+    @Column(length = 100, unique = true)
     private String email;
+
     private Boolean ativo;
 
     public Long getId() {
