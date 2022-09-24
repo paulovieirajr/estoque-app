@@ -7,6 +7,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -16,6 +17,7 @@ import java.util.List;
  * @version 1.0
  */
 @Service
+@Transactional
 public class ClienteServiceImpl implements ClienteService {
 
     private static final Log LOG = LogFactory.getLog(ClienteServiceImpl.class);
