@@ -43,7 +43,7 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public Cliente salvar(Cliente cliente) {
-        LOG.info("Salvando cliente com id: " + cliente.getId());
+        LOG.info("Salvando cliente: " + cliente.getNome());
         return repository.save(cliente);
     }
 
@@ -54,7 +54,7 @@ public class ClienteServiceImpl implements ClienteService {
         // Caso o cliente não exista, o método findById irá lançar uma exceção
         Cliente cliente = encontrarPorId(id);
 
-        repository.delete(cliente);
+        repository.deleteById(cliente.getId());
     }
 
     @Override
