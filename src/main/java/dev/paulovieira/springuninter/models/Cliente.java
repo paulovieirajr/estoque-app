@@ -30,7 +30,7 @@ public class Cliente implements Serializable {
     @Column(nullable = false, length = 11, unique = true)
     private String cpf;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE, pattern = "dd/MM/yyyy")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name = "data_nascimento", nullable = false, columnDefinition = "DATE")
     private LocalDate dataNascimento;
 
