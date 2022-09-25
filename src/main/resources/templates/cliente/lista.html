@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Estoque</title>
+</head>
+<body>
+<div>
+    <h1>Sistema de Estoque</h1>
+    <hr>
+    <div>
+        <a th:href="@{/clientes/novo}">Novo</a>
+    </div>
+    <hr>
+
+    <table style="border: 1px solid #ccc;">
+        <thead>
+        <tr>
+            <th><strong>ID</strong></th>
+            <th><strong>NOME</strong></th>
+            <th><strong>CPF</strong></th>
+            <th><strong>DATA DE NASCIMENTO</strong></th>
+            <th><strong>E-MAIL</strong></th>
+            <th><strong>TELEFONE</strong></th>
+            <th><strong>CELULAR</strong></th>
+            <th><strong>SEXO</strong></th>
+            <th><strong>ATIVO</strong></th>
+            <th><strong>OPÇÕES</strong></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cliente : ${clientes}">
+                <td th:text="${cliente.id}"></td>
+                <td th:text="${cliente.nome}"></td>
+                <td th:text="${cliente.cpf}"></td>
+                <td th:text="${cliente.dataNascimento}"></td>
+                <td th:text="${cliente.email}"></td>
+                <td th:text="${cliente.telefone}"></td>
+                <td th:text="${cliente.celular}"></td>
+                <td th:text="${cliente.sexo}"></td>
+                <td>
+                    <a th:if="${cliente.ativo == false}" th:href="@{clientes/ativar/{id}(id=${cliente.id})}">Ativar</a>
+                    <a th:unless="${cliente.ativo == false}" th:href="@{clientes/inativar/{id}(id=${cliente.id})}">Inativar</a>
+                </td>
+                <td>
+                    <a th:href="@{/clientes/editar/{id}(id=${cliente.id})}" th:text="Editar">Editar</a>
+                    <a th:href="@{/clientes/excluir/{id}/excluir(id=${cliente.id})}" th:text="Excluir">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--<div>-->
+<!--    <a th:action="@{/clientes/novo}" href="/clientes/novo" th:method="post">Voltar</a>-->
+<!--</div>-->
+</body>
+</html>
