@@ -48,6 +48,10 @@ public class Cliente implements Serializable {
 
     private Boolean ativo;
 
+    public Cliente() {
+        this.ativo = ativo;
+    }
+
     public Long getId() {
         return id;
     }
