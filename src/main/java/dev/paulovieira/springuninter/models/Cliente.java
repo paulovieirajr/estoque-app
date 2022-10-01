@@ -49,7 +49,7 @@ public class Cliente implements Serializable {
     private Boolean ativo;
 
     public Cliente() {
-        this.ativo = ativo;
+        this.ativo = true;
     }
 
     public Long getId() {
