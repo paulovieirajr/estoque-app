@@ -25,11 +25,11 @@ public class LoadDatabaseConfig implements CommandLineRunner {
 
         Cliente cliente = new Cliente();
         cliente.setNome("John Doe");
-        cliente.setCpf("12345678901");
+        cliente.setCpf("618.857.170-75");
         cliente.setDataNascimento(LocalDate.of(1990, 1, 1));
         cliente.setEmail("johndoe@gmail.com");
-        cliente.setTelefone("1122223333");
-        cliente.setCelular("11987654321");
+        cliente.setTelefone("(11) 2222-3333");
+        cliente.setCelular("(11) 98765-4321");
         cliente.setSexo(Sexo.MASCULINO);
 
         service.salvar(cliente);
