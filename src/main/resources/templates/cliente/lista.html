@@ -14,8 +14,17 @@
         <a class="btn btn-outline-secondary" th:href="@{/clientes/novo}">Adicionar Cliente</a>
     </div>
     <hr>
+    <div th:if="${!#strings.isEmpty(feedback)}" class="alert alert-success" role="alert">
+        <span th:text="${feedback}"></span>
+    </div>
+    <div th:if="${!#strings.isEmpty(excluir) && !#strings.isEmpty(id)}" class="alert alert-success" role="alert">
+        <span th:text="${excluir}"></span>
+        <!-- Criar botoes para excluir -->
+        <a class="btn btn-primary" th:href="@{/clientes/excluir/sim/{id}(id=${id})}" th:text="Sim">Sim</a>
+        <a class="btn btn-primary" th:href="@{/clientes}" th:text="Não">Não</a>
+    </div>
 
-    <table class="border border-dark w-100">
+    <table class="border border-dark w-100 table table-hover">
         <thead class="border border-dark">
         <tr>
             <th><strong>ID</strong></th>
@@ -47,7 +56,7 @@
             </td>
             <td>
                 <a class="btn btn-secondary p-sm-1" th:href="@{/clientes/editar/{id}(id=${cliente.id})}" th:text="Editar">Editar</a>
-                <a class="btn btn-danger p-sm-1" th:href="@{/clientes/excluir/{id}/excluir(id=${cliente.id})}" th:text="Excluir">Excluir</a>
+                <a class="btn btn-danger p-sm-1" th:href="@{/clientes/excluir/{id}(id=${cliente.id})}" th:text="Excluir">Excluir</a>
             </td>
         </tr>
         </tbody>
