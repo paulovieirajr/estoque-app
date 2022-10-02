@@ -1,9 +1,8 @@
-# Projeto Spring Boot
+# Projeto Sistema de Estoque (:construction: Em construção...)
 
-Esta é uma aplicação desenvolvida durante a disciplina Linguagem de Programação na universidade Uninter.
+Esta é uma aplicação desenvolvida com base na disciplina Linguagem de Programação na universidade Uninter.
 
-A ideia do projeto é entender os funcionamentos do framework Spring que tornou-se tão popular durante os últimos anos. A aplicação consiste em um sistema de
-estoque.
+A ideia do projeto é entender os funcionamentos do framework Spring de uma forma geral e realizar melhorias que não foram abordadas durante a disciplina. Como por exemplo, containerizar com Docker. A aplicação consiste em um sistema de estoque.
 
 Durante as aulas são abordados temas como: 
 
@@ -18,8 +17,18 @@ Durante as aulas são abordados temas como:
 > - Spring MVC
 >
 > - Spring Data JPA
+
+Tecnologias usadas no projeto:
+
+> - Java 17
 >
-> - E muito mais...
+> - Spring Boot
+>
+> - Thymeleaf
+>
+> - Jakarta Validation
+>
+> - Bootstrap 5
 
 ___
 
