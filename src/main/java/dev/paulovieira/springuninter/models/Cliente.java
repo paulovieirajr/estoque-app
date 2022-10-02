@@ -1,9 +1,11 @@
 package dev.paulovieira.springuninter.models;
 
 import dev.paulovieira.springuninter.models.enums.Sexo;
+import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -24,25 +26,37 @@ public class Cliente implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "O nome é obrigatório")
+    @Size(min = 2, max = 50, message = "O nome deve ter entre 2 e 50 caracteres")
     @Column(nullable = false, length = 50)
     private String nome;
 
-    @Column(nullable = false, length = 11, unique = true)
+    @CPF(message = "CPF inválido, por favor, verifique")
+    @Size(min = 14, max = 14)
+    @Column(nullable = false, length = 14, unique = true)
     private String cpf;
 
+    @Past(message = "A data de nascimento deve ser no passado")
+    @NotNull(message = "Informe a data de nascimento")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name = "data_nascimento", nullable = false, columnDefinition = "DATE")
     private LocalDate dataNascimento;
 
+    @NotNull(message = "Informe o sexo")
     @Enumerated(EnumType.STRING)
     private Sexo sexo;
 
-    @Column(length = 12, unique = true)
+    @Size(min = 0, max = 14)
+    @Column(length = 14, unique = true)
     private String telefone;
 
-    @Column(length = 11, unique = true)
+    @NotBlank(message = "Celular inválido, por favor, verifique")
+    @Size(min = 15, max = 15)
+    @Column(length = 15, unique = true)
     private String celular;
 
+    @NotBlank
+    @Email(message = "E-mail inválido")
     @Column(length = 100, unique = true)
     private String email;
 
