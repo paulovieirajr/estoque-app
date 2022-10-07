@@ -6,6 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -20,6 +21,7 @@ import java.time.LocalDate;
 @Table(name = "clientes")
 public class Cliente implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -46,7 +48,7 @@ public class Cliente implements Serializable {
     @Enumerated(EnumType.STRING)
     private Sexo sexo;
 
-    @Size(min = 0, max = 14)
+    @Size(max = 14)
     @Column(length = 14, unique = true)
     private String telefone;
 
