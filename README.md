@@ -29,6 +29,12 @@ Tecnologias usadas no projeto:
 > - Jakarta Validation
 >
 > - Bootstrap 5
+>
+> - Spring Security
+>
+> - MySQL
+>
+> - H2 Database
 
 ___
 
