@@ -2,21 +2,53 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>dev.paulovieira</groupId>
-    <artifactId>springuninter</artifactId>
+    <artifactId>estoque-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>springuninter</name>
-    <description>springuninter</description>
+    <name>estoque-app</name>
+    <description>estoque-app</description>
+
     <properties>
         <java.version>17</java.version>
     </properties>
+
+    <profiles>
+    <!-- Profile para ativar o uso do banco de dados H2 -->
+        <profile>
+            <id>dev-h2</id>
+            <activation>
+                <file>
+                    <exists>src/main/resources/application-dev-h2.yml</exists>
+                </file>
+            </activation>
+            <properties>
+                <activatedProperties>dev-h2</activatedProperties>
+            </properties>
+        </profile>
+
+        <!-- Profile para ativar o uso do banco de dados MySQL -->
+        <profile>
+            <id>dev-mysql</id>
+            <activation>
+                <file>
+                    <exists>src/main/resources/application-dev-mysql.yml</exists>
+                </file>
+            </activation>
+            <properties>
+                <activatedProperties>dev-mysql</activatedProperties>
+            </properties>
+        </profile>
+    </profiles>
+
     <dependencies>
 
         <!-- Spring Boot Dependencies -->
@@ -51,10 +83,15 @@
         </dependency>
 
 
-        <!-- Conection with MySQL -->
+        <!-- Conection with MySQL and H2 Database -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
         </dependency>
 
         <!-- Testes -->
@@ -78,8 +115,6 @@
             <version>2.7.4</version>
         </dependency>
 
-
-
     </dependencies>
 
     <build>
@@ -89,6 +124,12 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
 
 </project>

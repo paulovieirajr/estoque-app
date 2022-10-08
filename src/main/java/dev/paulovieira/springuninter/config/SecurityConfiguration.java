@@ -42,7 +42,7 @@ public class SecurityConfiguration{
                                         form
                                                 .loginPage("/login")
                                                 .defaultSuccessUrl("/", true)
-                                                .failureUrl("/login-error")
+                                                .failureUrl("/login-error") // TODO: Implementar pagina de erro
                                                 .permitAll()
                                         .and()
                                                 .logout()
@@ -52,7 +52,13 @@ public class SecurityConfiguration{
                                         throw new RuntimeException(e);
                                     }
                                 }
+
                         );
+
+            // Permitir acesso ao banco h2 com autenticação
+            http.csrf().disable();
+            http.headers().frameOptions().disable();
+
             return http.build();
         } catch (Exception e) {
             throw new RuntimeException(e);
