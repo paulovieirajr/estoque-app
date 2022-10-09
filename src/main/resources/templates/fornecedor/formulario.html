@@ -20,7 +20,7 @@
             <input class="form-check-input" role="switch" id="ativo" type="checkbox" th:field="*{ativo}">
         </div>
         <div class="row">
-            <div class="col-6 mb-6">
+            <div class="col-6 mb-3">
                 <label class="form-label" for="nome">Razão Social</label>
                 <input class="form-control" id="nome" type="text" th:field="*{razaoSocial}">
                 <span class="text-danger" th:if="${#fields.hasErrors('razaoSocial')}" th:errors="*{razaoSocial}"></span>
