@@ -7,8 +7,11 @@
     <title>Sistema de Estoque</title>
 </head>
 <body class="p-4">
-<div class="container">
-    <h1>Sistema de Estoque</h1>
+
+<div th:replace="fragments/menu :: menu"></div>
+
+<div class="container mt-5">
+    <h1>Clientes</h1>
     <hr>
     <div class="mb-3">
         <a class="btn btn-outline-secondary" th:href="@{/clientes/novo}">Adicionar Cliente</a>

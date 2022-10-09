@@ -7,7 +7,10 @@
     <title>Sistema de Estoque</title>
 </head>
 <body class="p-4">
-<div class="container">
+
+<div th:replace="fragments/menu :: menu"></div>
+
+<div class="container mt-5">
     <h1>Formulário de Cliente</h1>
     <hr>
     <form th:action="@{/clientes}" th:object="${cliente}" method="post">
