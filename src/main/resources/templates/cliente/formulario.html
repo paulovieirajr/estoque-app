@@ -19,7 +19,7 @@
             <label class="form-check-label" for="ativo">Registro ativo</label>
             <input class="form-check-input" role="switch" id="ativo" type="checkbox" th:field="*{ativo}">
         </div>
-        <div class="mb-6">
+        <div class="mb-3">
             <label class="form-label" for="nome">Nome</label>
             <input class="form-control" id="nome" type="text" th:field="*{nome}">
             <span class="text-danger" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
