@@ -38,7 +38,6 @@ public class SecurityConfiguration{
                                         form
                                                 .loginPage("/login")
                                                 .defaultSuccessUrl("/", true)
-                                                .failureUrl("/login-error") // TODO: Implementar pagina de erro
                                                 .permitAll()
                                         .and()
                                                 .logout()
