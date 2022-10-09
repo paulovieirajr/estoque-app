@@ -1,6 +1,6 @@
-package dev.paulovieira.springuninter.models;
+package dev.paulovieira.estoqueapp.models;
 
-import dev.paulovieira.springuninter.models.enums.Sexo;
+import dev.paulovieira.estoqueapp.models.enums.Sexo;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.DateTimeFormat;
 

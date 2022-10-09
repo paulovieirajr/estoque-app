@@ -1,8 +1,8 @@
-package dev.paulovieira.springuninter.services.impl;
+package dev.paulovieira.estoqueapp.services.impl;
 
-import dev.paulovieira.springuninter.models.Cliente;
-import dev.paulovieira.springuninter.repositories.ClienteRepository;
-import dev.paulovieira.springuninter.services.ClienteService;
+import dev.paulovieira.estoqueapp.models.Cliente;
+import dev.paulovieira.estoqueapp.repositories.ClienteRepository;
+import dev.paulovieira.estoqueapp.services.ClienteService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;

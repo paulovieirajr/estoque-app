@@ -1,7 +1,7 @@
-package dev.paulovieira.springuninter.controllers;
+package dev.paulovieira.estoqueapp.controllers;
 
-import dev.paulovieira.springuninter.models.Cliente;
-import dev.paulovieira.springuninter.services.impl.ClienteServiceImpl;
+import dev.paulovieira.estoqueapp.models.Cliente;
+import dev.paulovieira.estoqueapp.services.impl.ClienteServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;

@@ -1,8 +1,8 @@
-package dev.paulovieira.springuninter.services.impl;
+package dev.paulovieira.estoqueapp.services.impl;
 
-import dev.paulovieira.springuninter.models.Cliente;
-import dev.paulovieira.springuninter.models.enums.Sexo;
-import dev.paulovieira.springuninter.repositories.ClienteRepository;
+import dev.paulovieira.estoqueapp.models.Cliente;
+import dev.paulovieira.estoqueapp.models.enums.Sexo;
+import dev.paulovieira.estoqueapp.repositories.ClienteRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
