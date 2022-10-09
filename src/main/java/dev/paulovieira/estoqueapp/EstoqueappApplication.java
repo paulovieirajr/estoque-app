@@ -1,13 +1,13 @@
-package dev.paulovieira.springuninter;
+package dev.paulovieira.estoqueapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringuninterApplication {
+public class EstoqueappApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringuninterApplication.class, args);
+        SpringApplication.run(EstoqueappApplication.class, args);
     }
 
 }

@@ -1,4 +1,4 @@
-package dev.paulovieira.springuninter.models.enums;
+package dev.paulovieira.estoqueapp.models.enums;
 
 public enum Sexo {
     MASCULINO("Masculino"),

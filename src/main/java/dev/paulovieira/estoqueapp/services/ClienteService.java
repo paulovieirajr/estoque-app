@@ -1,6 +1,6 @@
-package dev.paulovieira.springuninter.services;
+package dev.paulovieira.estoqueapp.services;
 
-import dev.paulovieira.springuninter.models.Cliente;
+import dev.paulovieira.estoqueapp.models.Cliente;
 
 import java.util.List;
 

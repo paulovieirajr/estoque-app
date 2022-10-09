@@ -11,55 +11,51 @@
 <div th:replace="fragments/menu :: menu"></div>
 
 <div class="container mt-5">
-    <h1>Formulário de Cliente</h1>
+    <h1>Formulário de Fornecedores</h1>
     <hr>
-    <form th:action="@{/clientes}" th:object="${cliente}" method="post">
+    <form th:action="@{/fornecedores}" th:object="${fornecedor}" method="post">
         <input id="ativo" type="hidden" th:field="*{id}">
         <div class="mb-3 form-check form-switch">
             <label class="form-check-label" for="ativo">Registro ativo</label>
             <input class="form-check-input" role="switch" id="ativo" type="checkbox" th:field="*{ativo}">
         </div>
-        <div class="mb-6">
-            <label class="form-label" for="nome">Nome</label>
-            <input class="form-control" id="nome" type="text" th:field="*{nome}">
-            <span class="text-danger" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+        <div class="row">
+            <div class="col-6 mb-6">
+                <label class="form-label" for="nome">Razão Social</label>
+                <input class="form-control" id="nome" type="text" th:field="*{razaoSocial}">
+                <span class="text-danger" th:if="${#fields.hasErrors('razaoSocial')}" th:errors="*{razaoSocial}"></span>
+            </div>
+            <div class="col-6 mb-3">
+                <label class="form-label" for="nomeFantasia">Nome Fantasia</label>
+                <input class="form-control" id="nomeFantasia" type="text" th:field="*{nomeFantasia}">
+                <span class="text-danger" th:if="${#fields.hasErrors('nomeFantasia')}"
+                      th:errors="*{nomeFantasia}"></span>
+            </div>
         </div>
         <div class="row">
             <div class="col-6 mb-3">
-                <label class="form-label" for="cpf">CPF</label>
-                <input class="form-control" id="cpf" type="text" placeholder="XXX.XXX.XXX-XX" th:field="*{cpf}">
-                <span class="text-danger" th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"></span>
+                <label class="form-label" for="cpf">CNPJ</label>
+                <input class="form-control" id="cpf" type="text" placeholder="XX.XXX.XXX/XXXX-XX" th:field="*{cnpj}">
+                <span class="text-danger" th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}"></span>
             </div>
-            <div class="col-4 mb-3">
-                <label class="form-label" for="dataNascimento">Data de Nascimento</label>
-                <input class="form-control" id="dataNascimento" type="date" th:field="*{dataNascimento}">
-                <span class="text-danger" th:if="${#fields.hasErrors('dataNascimento')}"
-                      th:errors="*{dataNascimento}"></span>
-            </div>
-            <div class="col-2 mb-3">
-                <label class="form-label" for="sexo">Sexo</label>
-                <select class="form-control form-select" id="sexo" th:field="*{sexo}">
-                    <option value="MASCULINO">Masculino</option>
-                    <option value="FEMININO">Feminino</option>
-                </select>
-                <span class="text-danger" th:if="${#fields.hasErrors('sexo')}" th:errors="*{sexo}"></span>
+            <div class="col-6 mb-3">
+                <label class="form-label" for="email">E-mail</label>
+                <input class="form-control" id="email" type="text" placeholder="email@email.com" th:field="*{email}">
+                <span class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
             </div>
         </div>
         <div class="row">
-            <div class="col-3 mb-3">
+            <div class="col-6 mb-3">
                 <label class="form-label" for="telefone">Telefone</label>
-                <input class="form-control" id="telefone" type="tel" placeholder="(XX) XXXX-XXXX" th:field="*{telefone}">
+                <input class="form-control" id="telefone" type="tel" placeholder="(XX) XXXX-XXXX"
+                       th:field="*{telefone}">
             </div>
-            <div class="col-3 mb-3">
+            <div class="col-6 mb-3">
                 <label class="form-label" for="celular">Celular</label>
                 <input class="form-control" id="celular" type="tel" placeholder="(XX) XXXXX-XXXX" th:field="*{celular}">
                 <span class="text-danger" th:if="${#fields.hasErrors('celular')}" th:errors="*{celular}"></span>
             </div>
-            <div class="col-6 mb-3">
-                <label class="form-label" for="email">E-mail</label>
-                <input class="form-control" id="email" type="text" placeholder="seuemail@email.com" th:field="*{email}">
-                <span class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
-            </div>
+
         </div>
         <div class="mb-3">
             <input class="btn btn-primary" type="submit" value="Salvar">
@@ -67,7 +63,7 @@
     </form>
     <hr>
     <div class="mb-3">
-        <a class="btn btn-outline-secondary" th:href="@{/clientes}">Lista de Clientes</a>
+        <a class="btn btn-outline-secondary" th:href="@{/fornecedores}">Lista de Fornecedores</a>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
@@ -79,7 +75,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#cpf').mask('000.000.000-00', {reverse: true});
+        $('#cnpj').mask('00.000.000/0000-00', {reverse: true});
         $('#telefone').mask('(00) 0000-0000');
         $('#celular').mask('(00) 00000-0000');
     });
