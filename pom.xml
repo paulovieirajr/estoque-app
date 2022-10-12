@@ -13,9 +13,11 @@
     <groupId>dev.paulovieira</groupId>
     <artifactId>estoque-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>estoque-app</name>
-    <description>estoque-app</description>
+    <description>
+        Aplicações para controle de estoque, onde é possível cadastrar produtos, fornecedores e clientes.
+    </description>
 
     <properties>
         <java.version>17</java.version>
